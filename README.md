@@ -40,3 +40,33 @@
 ![](https://z3.ax1x.com/2021/07/28/W7BfQe.png)
 
 ------------
+## GitHub地址：<a href="https://github.com/xiaojb8/nanawk" target="_blank">https://github.com/xiaojb8/nanawk</a>
+
+
+## 安装方法：
+1. 修改服务器伪静态规则，隐藏.php扩展名（不隐藏将无法使用）
+2. 修改 static\js\app.13522539.js 第3052行，改为自己服务器网址。
+3. 删除 index.html 239-224行，这行是登录页的“平台介绍”和“获取账号”按钮。
+4. 修改 core\DB.php 里面填写你自己的数据库信息。
+5. 修改 core\core.php 第43行，修改token盐值，第47行是密码加密算法。
+6. 修改 core\config.php 修改平台名称和开户默认密码。
+7. 修改 agentList\myAgent\createAgent.php 第48行，修改“<”为“<=”即可禁止平开。
+8. 修改 agentList\myAgent\saveChargeV2.php 第19行最小充值金额，第26行扣费算法，+1为手续费。
+9. 修改 account\changePwdV2.php 第7-9行，禁止admin修改密码，删除即可。
+10. 修改 client\website\websiteNoticeInfo.php 修改网站公告（注意转义）。
+11. 修改 userAdd.php 第55行到最后，查课算法，根据平台ID进行判断，然后导入api\ck\文件夹下的查课接口进行查课，为防止白嫖已经删除查课接口，请自行适配。
+11. 将全部文件上传到服务器，将data.sql导入mysql数据库。
+12. 顶级账号为xiao8 密码123456，请自行在数据库修改。
+13. 数据库goods表为商品，id为商品id，与第11条匹配，show字段为1则可以下单，不为1则无法下单与查课，multiple字段为价格倍数，与用户单价相乘则为真实价格。
+
+## 提示：
+1. 不卖系统
+2. 不提供技术咨询
+3. 仅为交单系统，没有刷课功能，请自行开发对接
+4. 不提供对接其他平台功能
+5. 前端是经过编译的，我不是娜娜作者，不能解
+6. 前端作者已经入狱，所以使用此系统有一定的法律风险，傻白甜请勿使用。
+7. 网站或介绍如有问题，请在github上提交issues，不会添加新功能。
+7. 对于那些“端起碗吃肉，放下筷子骂娘”的人，请保护好你的个人隐私，正义会来临，正义也会迟到。
+
+## 欢迎光临我的博客http://blog.xiao8.icu/
