@@ -1,6 +1,7 @@
 <?php
 header("Content-type: text/html; charset=utf-8");
 require $_SERVER['DOCUMENT_ROOT'].'/core/DB.php';
+require $_SERVER['DOCUMENT_ROOT'].'/core/config.php';
 $headers = getallheaders();
 if(!isset($headers['X-Token'])){
     $user_token = null;
