@@ -1,3 +1,6 @@
+# 2021.09.03 修复了一个无密码登录的安全问题，修复了自行修改密码算法但是登陆功能不更新的问题，兼容了原版娜娜的另一种登录方式
+# 更新文件：user/login.php
+
 娜娜作者于2020年12月被捕，网站没有关闭，过了几天后台崩溃，刷课客户端功能失效，网站前端及用户下单系统一直在运行，今年7月，娜娜的其中一个网站（<a href="http://wk.nanashuake.com" target="_blank">wk.nanashuake.com</a>）备案被注销，另一网站（<a href="http://wk.nanayun.com/" target="_blank">wk.nanayun.com</a>）仍在运行，但我无法登录。
 
 ------------
